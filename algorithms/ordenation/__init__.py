@@ -1,2 +1,2 @@
-# from .shell_sort import ShellSort
+from .shell_sort import ShellSort
 from .bubble_sort import BubbleSort
