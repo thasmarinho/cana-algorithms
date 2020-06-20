@@ -1,8 +1,15 @@
-# cana-algorithms
+Cana Algorithms
+========
 Project dedicated to implement all algorithms from Construction and Analyze of Algorithms (CANA) course.
 
-##Install requirements
+
+Install dependencies
+--------------------
+
 $ pip3 install -r requirements.txt
 
-## Run Tests
+
+Testing
+-------
+
 $ python3 -m pytest -r test
