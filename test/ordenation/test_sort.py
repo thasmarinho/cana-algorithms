@@ -1,6 +1,7 @@
 import pytest
 from algorithms.ordenation import BubbleSort
 from algorithms.ordenation import ShellSort
+from algorithms.ordenation import MergeSort
 
 testdata = [
     ([], []),
@@ -24,6 +25,12 @@ class TestSortClass:
 
     def test_shell_sort(self, original, expected):
         algo = ShellSort()
+        obtained = algo.sort(original)
+
+        assert expected == obtained
+
+    def test_merge_sort(self, original, expected):
+        algo = MergeSort()
         obtained = algo.sort(original)
 
         assert expected == obtained
