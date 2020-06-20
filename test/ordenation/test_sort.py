@@ -12,6 +12,7 @@ testdata = [
     ([-9,0,1,5,3,-1,4,2], [-9,-1,0,1,2,3,4,5]),
     ([-55,-3,-16], [-55,-16,-3])
 ]
+
 @pytest.mark.parametrize("original, expected", testdata)
 class TestSortClass:
 
