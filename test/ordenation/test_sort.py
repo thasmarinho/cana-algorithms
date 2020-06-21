@@ -2,6 +2,7 @@ import pytest
 from algorithms.ordenation import BubbleSort
 from algorithms.ordenation import ShellSort
 from algorithms.ordenation import MergeSort
+from algorithms.ordenation import QuickSort
 
 testdata = [
     ([], []),
@@ -33,4 +34,9 @@ class TestSortClass:
         algo = MergeSort()
         obtained = algo.sort(original)
 
+        assert expected == obtained
+
+    def test_quick_sort(self, original, expected):
+        algo = QuickSort()
+        obtained = algo.sort(original)
         assert expected == obtained
