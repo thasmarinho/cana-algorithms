@@ -12,7 +12,7 @@ testdata = [
     ([191,2,73,1,7,3,5], [1,2,3,5,7,73,191]),
     (['C','B','D'], ['B','C','D']),
     ([-9,0,1,5,3,-1,4,2], [-9,-1,0,1,2,3,4,5]),
-    ([-55,-3,-16], [-55,-16,-3])
+    ([-16,-3,-55], [-55,-16,-3])
 ]
 
 @pytest.mark.parametrize("original, expected", testdata)
@@ -39,4 +39,11 @@ class TestSortClass:
     def test_quick_sort(self, original, expected):
         algo = QuickSort()
         obtained = algo.sort(original)
+
+        assert expected == obtained
+
+    def test_quick_sort_with_two_pivots(self, original, expected):
+        algo = QuickSort()
+        obtained = algo.sort_with_two_pivots(original)
+
         assert expected == obtained
