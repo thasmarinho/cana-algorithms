@@ -42,6 +42,13 @@ class QuickSort():
         else:
             return list
 
+    def validate(self, list, number_of_pivots):
+        length = len(list)
+        if length < 1 or number_of_pivots < 1:
+            raise Exception("Error: length or number of pivots is bellow minimum (1)")
+        elif number_of_pivots > length:
+            raise Exception("Sorry, the number of pivots should be below list's length")
+
     def get_pivots(self, list, number_of_pivots):
         """Get first elements from list as pivots.
 
@@ -53,12 +60,7 @@ class QuickSort():
         pivots (list): pivots in ascending order
 
        """
-        length = len(list)
-        if length < 1 or number_of_pivots < 1:
-            raise Exception("Error: length or number of pivots is bellow minimum (1)")
-        elif number_of_pivots > length:
-            raise Exception("Sorry, the number of pivots should be below list's length")
-
+        self.validate(list, number_of_pivots)
         pivots = []
         for i, element in enumerate(list[:number_of_pivots]):
             pivots.append(element)
@@ -76,12 +78,7 @@ class QuickSort():
         pivots (list): pivots in ascending order
 
        """
-        length = len(list)
-        if length < 1 or number_of_pivots < 1:
-            raise Exception("Error: length or number of pivots is bellow minimum (1)")
-        elif number_of_pivots > length:
-            raise Exception("Sorry, the number of pivots should be below list's length")
-
+        self.validate(list, number_of_pivots)
         pivots = []
         for i, element in enumerate(list[-number_of_pivots:]):
             pivots.append(element)
@@ -93,17 +90,19 @@ class QuickSort():
         return list[middle]
 
     def get_random_as_pivots(self, list, number_of_pivots):
-        length = len(list)
-        if length < 1 or number_of_pivots < 1:
-            raise Exception("Error: length or number of pivots is bellow minimum (1)")
-        elif number_of_pivots > length:
-            raise Exception("Sorry, the number of pivots should be below list's length")
-
+        self.validate(list, number_of_pivots)
         return random.sample(list, number_of_pivots)
 
     def get_average_as_pivot(self, list):
-        # get median from 3 different numbers (first, middle, last)
         length = len(list)
-        middle = length // 2
+        if(length < 1):
+            average = 0
+        elif(length == 1):
+            average = list[0]
+        elif(length == 2):
+            average = (list[0] + list[1]) // 2
+        else:
+            middle = length // 2
+            average = (list[0] + list[middle] + list[-1]) // 3
 
-        return (list[0] + list[middle] + list[-1]) // 3
+        return average
