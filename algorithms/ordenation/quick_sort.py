@@ -1,7 +1,10 @@
 #!/usr/bin/python
+import random
+
+
 class QuickSort():
 
-    def sort(self,list):
+    def sort(self, list):
         less = []
         equal = []
         greater = []
@@ -20,7 +23,7 @@ class QuickSort():
         else:
             return list
 
-    def sort_with_two_pivots(self,list):
+    def sort_with_two_pivots(self, list):
         less = []
         between = []
         greater = []
@@ -39,7 +42,7 @@ class QuickSort():
         else:
             return list
 
-    def get_pivots(self,list,number_of_pivots):
+    def get_pivots(self, list, number_of_pivots):
         """Get first elements from list as pivots.
 
         Parameters:
@@ -62,7 +65,7 @@ class QuickSort():
 
         return self.sort(pivots)
 
-    def get_last_as_pivots(self,list,number_of_pivots):
+    def get_last_as_pivots(self, list, number_of_pivots):
         """Get first elements from list as pivots.
 
         Parameters:
@@ -84,3 +87,23 @@ class QuickSort():
             pivots.append(element)
 
         return self.sort(pivots)
+
+    def get_middle_as_pivot(self, list):
+        middle = len(list) // 2
+        return list[middle]
+
+    def get_random_as_pivots(self, list, number_of_pivots):
+        length = len(list)
+        if length < 1 or number_of_pivots < 1:
+            raise Exception("Error: length or number of pivots is bellow minimum (1)")
+        elif number_of_pivots > length:
+            raise Exception("Sorry, the number of pivots should be below list's length")
+
+        return random.sample(list, number_of_pivots)
+
+    def get_average_as_pivot(self, list):
+        # get median from 3 different numbers (first, middle, last)
+        length = len(list)
+        middle = length // 2
+
+        return (list[0] + list[middle] + list[-1]) // 3

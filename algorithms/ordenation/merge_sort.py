@@ -1,7 +1,7 @@
 #!/usr/bin/python
 class MergeSort():
 
-    def sort(self,list):
+    def sort(self, list):
         length = len(list)
 
         if length > 1:
