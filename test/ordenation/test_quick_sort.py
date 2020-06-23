@@ -12,7 +12,6 @@ class TestQuickSort:
     def test_get_pivots(self, list, number_of_pivots, expected):
         algo = QuickSort()
         obtained = algo.get_pivots(list, number_of_pivots)
-        assert number_of_pivots == len(obtained)
         assert expected == obtained
 
     @pytest.mark.parametrize("list, number_of_pivots",
