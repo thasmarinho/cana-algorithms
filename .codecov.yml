@@ -8,22 +8,9 @@
 # ----------------------
 codecov:
   token: "7cb5afe5-5d97-4cad-b540-9d164b33bf00"
-  bot: "codecov-io"
-  ci:
-    - "travis.org"
-  strict_yaml_branch: "yaml-config"
-  max_report_age: 24
-  disable_default_path_fixes: no
-  require_ci_to_pass: yes
-  notify:
-    after_n_builds: 3
-    wait_for_ci: yes
 
 coverage:
-  status:
-    patch: false
-
-  range: 70..100     # First number represents red, and second represents green
+  range: 60..80     # First number represents red, and second represents green
                     # (default is 70..100)
   round: up       # up, down, or nearest
   precision: 2      # Number of decimal places, between 0 and 5
@@ -32,8 +19,8 @@ coverage:
 # --------------
 # which folders/files to ignore
 ignore:
-  - "*/tests/.*"
-  - "*/cli.py"
+  - "*/tests/**.*"
+  - "**/ui/**"
   - "**/__init__.py"
   - "setup.py"
   - "main.py"

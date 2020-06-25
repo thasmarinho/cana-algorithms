@@ -22,7 +22,7 @@ Run via terminal
 
 $ python3 -m main --help
 
-$ python3 -m main -i [3,2,3,8,5,3]
+$ python3 -m main quick -i [3,2,3,8,5,3]
 
 Execute tests
 -------

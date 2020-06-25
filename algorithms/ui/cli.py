@@ -30,9 +30,12 @@ def arg_to_list(args):
     return options
 
 
-def show(result):
+def show(result, is_desc):
     print("Sorted list = ", end='')
-    print(result)
+    if(is_desc):
+        print(result[::-1])
+    else:
+        print(result)
 
 
 class TerminalView():
@@ -45,66 +48,66 @@ class TerminalView():
     @click.option("--input", "-i", "input", required=True,
                   help="List to be sorted (e.g. [1,2,3])",
                   )
-    @click.option('--asc/--asc-order', "-a", default=True, help='Sort list in ascending order')
-    def bubble(input, asc):
+    @click.option('--desc/--desc-order', "-d", default=False, help='Sort list in descending order')
+    def bubble(input, desc):
         """Sort a list using BUBBLE SORT algorithm.
         """
         list = arg_to_list(input)
         algo = BubbleSort()
         obtained = algo.sort(list)
-        show(obtained)
+        show(obtained, desc)
 
     @click.command()
     @click.option("--input", "-i", "input", required=True,
                   help="List to be sorted (e.g. [1,2,3])",
                   )
-    @click.option('--asc/--asc-order', "-a", default=True, help='Sort list in ascending order')
-    def shell(input, asc):
+    @click.option('--desc/--desc-order', "-d", default=False, help='Sort list in descending order')
+    def shell(input, desc):
         """Sort a list using SHELL SORT algorithm.
         """
         list = arg_to_list(input)
         algo = ShellSort()
         obtained = algo.sort(list)
-        show(obtained)
+        show(obtained, desc)
 
     @click.command()
     @click.option("--input", "-i", "input", required=True,
                   help="List to be sorted (e.g. [1,2,3])",
                   )
-    @click.option('--asc/--asc-order', "-a", default=True, help='Sort list in ascending order')
-    def merge(input, asc):
+    @click.option('--desc/--desc-order', "-d", default=False, help='Sort list in descending order')
+    def merge(input, desc):
         """Sort a list using MERGE SORT algorithm.
         """
         list = arg_to_list(input)
         algo = MergeSort()
         obtained = algo.sort(list)
-        show(obtained)
+        show(obtained, desc)
 
     @click.command()
     @click.option("--input", "-i", "input", required=True,
                   help="List to be sorted (e.g. [1,2,3])",
                   )
-    @click.option('--asc/--asc-order', "-a", default=True, help='Sort list in ascending order')
-    def quick(input, asc):
+    @click.option('--desc/--desc-order', "-d", default=False, help='Sort list in descending order')
+    def quick(input, desc):
         """Sort a list using QUICK SORT algorithm.
         """
         list = arg_to_list(input)
         algo = QuickSort()
         obtained = algo.sort(list)
-        show(obtained)
+        show(obtained, desc)
 
     @click.command()
     @click.option("--input", "-i", "input", required=True,
                   help="List to be sorted (e.g. [1,2,3])",
                   )
-    @click.option('--asc/--asc-order', "-a", default=True, help='Sort list in ascending order')
-    def heap(input, asc):
+    @click.option('--desc/--desc-order', "-d", default=False, help='Sort list in descending order')
+    def heap(input, desc):
         """Sort a list using BUBBLE SORT algorithm.
         """
         list = arg_to_list(input)
         algo = HeapSort()
         obtained = algo.sort(list)
-        show(obtained)
+        show(obtained, desc)
 
     # Add commands to group
     process.add_command(bubble)
