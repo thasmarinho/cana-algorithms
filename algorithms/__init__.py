@@ -1,10 +1,10 @@
 from algorithms.ordenation import BubbleSort
+from algorithms.ui import TerminalView
+
 
 def main():
-    list = [3]
-    algorithm = BubbleSort()
-    result = algorithm.sort(list)
-    print(result)
+    terminal = TerminalView()
+    terminal.process()
 
 
 if __name__ == "__main__":
