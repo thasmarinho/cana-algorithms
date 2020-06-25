@@ -20,7 +20,7 @@ coverage:
 # which folders/files to ignore
 ignore:
   - "*/tests/**.*"
-  - "**/ui/**"
+  # - "**/ui/**"
   - "**/__init__.py"
   - "setup.py"
   - "main.py"

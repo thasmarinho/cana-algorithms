@@ -102,7 +102,7 @@ class TerminalView():
                   )
     @click.option('--desc/--desc-order', "-d", default=False, help='Sort list in descending order')
     def heap(input, desc):
-        """Sort a list using BUBBLE SORT algorithm.
+        """Sort a list using HEAP SORT algorithm.
         """
         list = arg_to_list(input)
         algo = HeapSort()
