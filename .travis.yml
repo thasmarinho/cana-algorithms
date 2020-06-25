@@ -8,4 +8,5 @@ install:
 # command to run tests
 script:
   - python -m pytest test --cov=./
-  - codecov --token=7cb5afe5-5d97-4cad-b540-9d164b33bf00
+after_success:
+  - codecov
