@@ -10,7 +10,7 @@ coverage:
   status:
     patch: false
 
-  range: 70..90     # First number represents red, and second represents green
+  range: 55..75     # First number represents red, and second represents green
                     # (default is 70..100)
   round: up       # up, down, or nearest
   precision: 2      # Number of decimal places, between 0 and 5
@@ -20,5 +20,6 @@ coverage:
 # which folders/files to ignore
 ignore:
   - */tests/.*
+  - */cli.py
   - setup.py
   - main.py
